@@ -8,7 +8,10 @@ public class CompareSubstring {
     static PrintWriter out = new PrintWriter(System.out);
 
     public static void main(String[] args) throws IOException {
-        String s1, s2, max, min;
+        String s1;
+        String s2;
+        String max;
+        String min;
         while ((s1 = in.readLine()) != null) {
             s2 = in.readLine();
             if (s1.length() >= s2.length()) {

@@ -8,7 +8,9 @@ public class WeightedAvareges {
 
         Scanner sc=new Scanner(System.in);
         int  N = sc.nextInt();
-        float a, b, c;
+        float a;
+        float b;
+        float c;
         float avg=0;
 
 

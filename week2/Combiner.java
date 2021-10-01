@@ -4,8 +4,6 @@ public class Combiner {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        sc.useLocale(Locale.ENGLISH);
-        Locale.setDefault(new Locale("en", "US"));
 
         int N = Integer.parseInt(sc.nextLine());
 

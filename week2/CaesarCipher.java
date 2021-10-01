@@ -5,11 +5,11 @@ public class CaesarCipher {
 
     public static void main(String[] args) throws IOException {
         Scanner sc=new Scanner(System.in);
-        int test_case=sc.nextInt();
+        int testСase=sc.nextInt();
         String soz=sc.nextLine();
         int vol=0;
 
-        for (int j=0;j<test_case;j++) {
+        for (int j=0;j<testСase;j++) {
             soz=sc.nextLine();
 
             if (vol!=0) {

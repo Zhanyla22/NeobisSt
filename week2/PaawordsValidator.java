@@ -5,10 +5,10 @@ public class PaawordsValidator {
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        sc.useLocale(Locale.ENGLISH);
-        Locale.setDefault(new Locale("en", "US"));
 
-        int okA=0, oka=0, okn=0;
+        int okA=0;
+        int okB=0;
+        int okN=0;
 
         while(sc.hasNext()){
 
@@ -17,19 +17,19 @@ public class PaawordsValidator {
             if (s.length() >= 6 && s.length() <= 32){
                 for(int i=0 ; i<s.length() ; i++){
                     if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z')
-                        oka++;
+                        okB++;
                     else if (s.charAt(i) >= 'A' && s.charAt(i) <= 'Z')
                         okA++;
                     else if (s.charAt(i) >= '0' && s.charAt(i) <= '9')
-                        okn++;
+                        okN++;
                 }
                 if (okA==0)
                     System.out.println("Senha invalida.");
-                else if (oka==0)
+                else if (okB==0)
                     System.out.println("Senha invalida.");
-                else if (okn==0)
+                else if (okN==0)
                     System.out.println("Senha invalida.");
-                else if (okA+oka+okn==s.length())
+                else if (okA+okB+okN==s.length())
                     System.out.println("Senha valida.");
                 else
                     System.out.println("Senha invalida.");

@@ -1,10 +1,20 @@
 package com.company.week4;
 
 public class Person {
-    int id;
-    int age;
-    String name;
-    String city;
+    private int id;
+    private int age;
+    private String name;
+    private String city;
+
+    public Person(){
+
+    }
+    public Person(int id,int age,String name,String city){
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.city = city;
+    }
 
     public int getId() {
         return id;

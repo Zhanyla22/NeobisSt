@@ -5,7 +5,8 @@ public class FibonacciArray {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int x, f;
+        int x;
+        int f;
         long fibbonaci[] = new long[61];
         x = sc.nextInt();
 
