@@ -1,0 +1,9 @@
+class FooBar{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an Integer: ");
+        int number=sc.nextInt();
+        String printed=number%2==0 ? "foo "+number:"bar "+number;
+        System.out.println(printed);
+    }
+}
