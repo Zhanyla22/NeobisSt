@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+
 @RestController
 @RequestMapping("/employee")
 class EmployeeController {
@@ -21,25 +22,20 @@ class EmployeeController {
         return employeeService.getAllEmployee();
     }
 
-    @GetMapping(value = "/findByIdEmployee")
+    @GetMapping(value = "/{id}")
     public Optional<Employee> getEmployee(@PathVariable("id") Integer id){
         return employeeService.findByIdEmployee(id);
 
     }
 
-    @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable("id") Integer id){
-        employeeService.deleteByIdEmployee(id);
-        return "deleted...";
-    }
 
-    @GetMapping("/addEmployee")
+    @PostMapping("/addEmployee")
     public EmployeeModel addEmployee(@RequestBody EmployeeModel employeeModel){
         employeeService.addNewEmployee(employeeModel);
         return employeeModel;
     }
 
-    @GetMapping("/id")
+    @PutMapping("/{id}")
     public String updateEmployee(@PathVariable ("id") Integer id, @RequestBody EmployeeModel employeeModel){
         return employeeService.updateEmployeeById(id, employeeModel);
 

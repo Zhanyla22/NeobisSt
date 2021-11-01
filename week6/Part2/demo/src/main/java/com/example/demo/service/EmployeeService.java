@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 
 public class EmployeeService {
@@ -23,9 +22,7 @@ public class EmployeeService {
     public Optional<Employee> findByIdEmployee(Integer id){
         return employeeRepository.findById(id);
     }
-    public void deleteByIdEmployee(Integer id){
-        employeeRepository.deleteById(id);
-    }
+
     public  Employee addNewEmployee(EmployeeModel employeeModel){
         Employee employee = new Employee(1,employeeModel.getName(),employeeModel.getLastName(), employeeModel.getDepartment(), employeeModel.getWorkExperienceYear(), employeeModel.getSalary());
         return employeeRepository.save(employee);
