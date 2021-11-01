@@ -21,7 +21,4 @@ public class ClientService {
     public Iterable<Client> getAllCustomers(){
         return clientRepository.findAll();
     }
-    public  void deleteByIdClient(Integer id){
-        clientRepository.deleteById(id);
-    }
 }

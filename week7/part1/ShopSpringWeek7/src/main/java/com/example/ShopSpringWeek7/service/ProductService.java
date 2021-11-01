@@ -23,9 +23,6 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public void deleteByIdProduct(Integer id){
-        productRepository.deleteById(id);
-    }
 
     public Product addNewProduct(ProductModel productModel){
         Product product = new Product(1,productModel.getName(),productModel.getBrandName(),productModel.getCost());

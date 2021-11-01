@@ -22,9 +22,4 @@ public class ClientController {
         return clientService.getAllCustomers();
     }
 
-    @DeleteMapping("/{id}")
-    public String deleteEmployee(@PathVariable("id") Integer id) {
-        clientService.deleteByIdClient(id);
-        return "deleted...";
-    }
 }

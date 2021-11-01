@@ -25,11 +25,7 @@ public class ProductController {
     public Optional<Product> getByIdproduct(@PathVariable("id") Integer id){
         return productService.findByIdProduct(id);
     }
-    @DeleteMapping("/{id}")
-    public String deleteByIdProduct(@PathVariable("id") Integer id){
-        productService.deleteByIdProduct(id);
-        return "product deleted...";
-    }
+
     @PostMapping("/adding Product")
     public ProductModel addNewProduct(@RequestBody ProductModel productModel){
         productService.addNewProduct(productModel);
