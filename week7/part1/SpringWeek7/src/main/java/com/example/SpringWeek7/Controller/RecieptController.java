@@ -18,7 +18,7 @@ public class RecieptController {
     private RecieptService recieptService;
 
 
-    @GetMapping("/all reciept")
+    @GetMapping("/all-reciept")
     private List<Reciept> allReciepts(){
         return recieptService.getAllReciepts();
     }
