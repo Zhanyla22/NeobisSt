@@ -2,7 +2,6 @@ package com.example.SpringWeek7.Config;
 
 import com.example.SpringWeek7.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -25,13 +24,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableWebSecurity
 @EnableTransactionManagement(proxyTargetClass = true)
-@EnableJpaRepositories(entityManagerFactoryRef = "com.example.SpringWeek7.Repository")
+//@EnableJpaRepositories(entityManagerFactoryRef = "com.example.SpringWeek7.Repository")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
 
-    public void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(userService);
     }
 

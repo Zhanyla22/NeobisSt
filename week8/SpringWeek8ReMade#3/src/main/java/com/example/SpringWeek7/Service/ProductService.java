@@ -33,7 +33,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public String updatebyIdProduct(Integer id, ProductModel productModel){
+    public String updateByIdProduct(Integer id, ProductModel productModel){
         Optional<Product> product = productRepository.findById(id);
         product.get().setName(productModel.getName());
         product.get().setBrandName(productModel.getBrandName());

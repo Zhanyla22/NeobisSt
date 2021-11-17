@@ -17,7 +17,7 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        org.apache.catalina.User user = userRepository.findUserByUsername(username);
+        User user = userRepository.findUserByUsername(username);
         if(user == null){
             throw new UsernameNotFoundException("There is no such an user!!! no! no! no!");
         }

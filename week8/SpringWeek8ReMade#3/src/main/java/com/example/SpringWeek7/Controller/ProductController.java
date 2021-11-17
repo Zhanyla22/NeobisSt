@@ -22,7 +22,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getByIdproduct(@PathVariable("id") Integer id) throws Exception {
+    public Optional<Product> getByIdProduct(@PathVariable("id") Integer id) throws Exception {
         return productService.findByIdProduct(id);
     }
 
@@ -34,6 +34,6 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public String updateProduct(@PathVariable ("id") Integer id, @RequestBody ProductModel productModel){
-        return productService.updatebyIdProduct(id,productModel);
+        return productService.updateByIdProduct(id,productModel);
     }
 }
