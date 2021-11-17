@@ -16,7 +16,7 @@ class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping(value = "/AllInfoEmployee")
+    @GetMapping(value = "/All-Info-Employee")
     public List<Employee> getAllEmployee(){
         return employeeService.getAllEmployee();
     }
@@ -27,7 +27,7 @@ class EmployeeController {
 
     }
 
-    @PostMapping("/addEmployee")
+    @PostMapping("/add-Employee")
     public EmployeeModel addEmployee(@RequestBody EmployeeModel employeeModel){
         employeeService.addNewEmployee(employeeModel);
         return employeeModel;

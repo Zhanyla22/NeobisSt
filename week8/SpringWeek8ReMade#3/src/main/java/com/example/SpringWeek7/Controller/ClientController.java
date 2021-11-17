@@ -18,7 +18,7 @@ public class ClientController {
         return clientService.getClientById(id);
     }
 
-    @GetMapping("/allClient")
+    @GetMapping("/all-Client")
     public Iterable<Client> getAllClient() {
         return clientService.getAllCustomers();
     }

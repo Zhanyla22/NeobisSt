@@ -19,7 +19,7 @@ public class OrderingController {
     @Autowired
     private OrderingService orderService;
 
-    @GetMapping("/all Orders")
+    @GetMapping("/all-Orders")
     public List<Ordering> allSales(){
         return orderService.getAllOrders();
     }

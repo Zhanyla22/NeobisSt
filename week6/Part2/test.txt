@@ -1,87 +1,75 @@
-Rrequest_1:
+//1.Get Employee By Id
 
-GET : localhost:8080/employee/AllInfoEmployee
+GET localhost:8080/employee/getEmployee/1
 
-200 ok
+{
+   "empId": 1,
+   "name":"Zhanylai",
+   "lastName":"Mamytova",
+   "department":"java",
+   "salary":30000,
+   "workExperienceYear":1
+}
+(200 OK)
 
+//2.Get All Employee
+
+GET localhost:8090/employee/allEmployee
 [
     {
-        "empId": 3,
-        "name": "James Hoog",
-        "lastName": "King",
-        "department": "seller",
-        "salary": 24000,
-        "workExperienceYear": 4
+        "empId": 1,
+        "name": "Zhanylai",
+        "lastName": "Mamytova",
+        "department": "java",
+        "salary": 30000,
+        "workExperienceYear": 1
     },
     {
         "empId": 2,
-        "name": "Aiganysh",
-        "lastName": "Kochhar",
-        "department": "seller",
-        "salary": 17000,
-        "workExperienceYear": 1
+        "name": "Aizada",
+        "lastName": "Kayimova",
+        "department": "Python",
+        "salary": 32000,
+        "workExperienceYear": 2
     }
 ]
+(200 OK)
 
-Request_2:
-GET : localhost:8080/employee/1
-200 ok
+//3. Create new Employee
 
-null
-
-Request_3:
-GET : localhost:8080/employee/2
-200 ok
-{
-    "empId": 2,
-    "name": "Aiganysh",
-    "lastName": "Kochhar",
-    "department": "seller",
-    "salary": 17000,
-    "workExperienceYear": 1
+POST localhost:8080/employee/createEmployee
+  
+ {     "name":"Tilek",
+      "lastName":"Kayimova",
+      "department":"Pythone",
+      "salary":32000,
+      "workExperienceYear":4
 }
+   
+(200 OK)
 
+//4.Update Employee
+POST localhost:8080/employee/updateEmployee/2
+  {
+      "name":"Aizada3",
+      "lastName":"Kayimova2",
+      "department":"Python1",
+      "salary":31000,
+      "workExperienceYear":4
+   }
+(400 OK)
+  {
+      "empId": 2,
+      "name":"Aizada3",
+      "lastName":"Kayimova2",
+      "department":"Python1",
+      "salary":31000,
+      "workExperienceYear":4
+   }
 
-Request_4:
-POST: localhost:8080/employee/addEmployee
-
-{
-    "name": "Murat",
-    "lastName" : "Beksov" ,
-    "salary" : 15000,
-    "workExperienceYear": 2,
-    "department": "seller"
-}
-
-200 OK
-
-{
-    "name": "Murat",
-    "lastName" : "Beksov" ,
-    "salary" : 15000,
-    "workExperienceYear": 2,
-    "department": "seller"
-}
-
-Request_5:
-PUT : localhost:8080/employee/1
-
-{
-    "salary" : 20000,
-    "workExperienceYear": 4
-}
-200 ok
-updated...
-
-Request_6:
-PUT : localhost:8080/employee/3
-
- {
-      "name": "Beksultan"
- }
-  200 okgi ti
-
- updated...
+//5.Delete Employee by ID
+DELETE localhost:8080/employee/deleteEmployee/2
+(200 OK)
 
 
 
