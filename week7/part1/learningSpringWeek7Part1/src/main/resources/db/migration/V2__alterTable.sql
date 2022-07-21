@@ -1,2 +1,0 @@
-ALTER TABLE users_reg
-ADD COLUMN mobile VARCHAR(15);

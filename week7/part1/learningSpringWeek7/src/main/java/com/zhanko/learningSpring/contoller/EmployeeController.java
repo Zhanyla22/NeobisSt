@@ -1,6 +1,7 @@
 package com.zhanko.learningSpring.contoller;
 
 import com.zhanko.learningSpring.entity.EmployeeEntity;
+import com.zhanko.learningSpring.model.EmployeeModel;
 import com.zhanko.learningSpring.serviceInterfaceImplement.EmployeeServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,25 +19,26 @@ public class EmployeeController {
     EmployeeServiceImplement employeeService;
 
     @GetMapping("/getEmployee/{empId}")
-    public Optional<EmployeeEntity> getEmployeeById(@RequestParam Integer empId){  //написать эксепшн
+    public ResponseEntity<EmployeeModel> getEmployeeById(@RequestParam Integer empId) throws Exception{  //написать эксепшн
         return employeeService.getEmployeeById(empId);
     }
 
     @GetMapping("/allEmployee")
     public List<EmployeeEntity> getAllEmployee(){
+
         return employeeService.getAllEmployee();
     }
 
     @PostMapping("/createEmployee")
-    public EmployeeEntity createEmployee(@RequestBody EmployeeEntity employeeEntity){
-        return employeeService.createNewEmployee(employeeEntity);
+    public ResponseEntity<EmployeeModel> createEmployee(@RequestBody EmployeeModel employeeModel) throws Exception{
+        return employeeService.createNewEmployee(employeeModel);
     }
 
 
 
     @PutMapping("/updateEmployee/{empId}")
-    public ResponseEntity<EmployeeEntity> updateEmployeeById(@PathVariable Integer  empId, EmployeeEntity employeeEntity) throws Exception {
-            return employeeService.updateEmployeeById(empId,employeeEntity);
+    public ResponseEntity<EmployeeModel> updateEmployeeById(@PathVariable Integer  empId, EmployeeModel employeeModel) throws Exception {
+            return employeeService.updateEmployeeById(empId,employeeModel);
 
     }
 

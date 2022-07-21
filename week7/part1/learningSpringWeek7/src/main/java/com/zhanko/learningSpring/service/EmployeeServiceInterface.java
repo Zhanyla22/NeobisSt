@@ -9,11 +9,11 @@ import java.util.Optional;
 public interface EmployeeServiceInterface {
     List<EmployeeEntity> getAllEmployee();
 
-    Optional<EmployeeEntity> getEmployeeById(Integer empId);
+    ResponseEntity<EmployeeModel> getEmployeeById(Integer empId) throws Exception;
 
-    EmployeeEntity createNewEmployee(EmployeeEntity employeeEntity);
+    ResponseEntity<EmployeeModel> createNewEmployee(EmployeeModel employeeModel) throws  Exception;
 
-    ResponseEntity<EmployeeEntity> updateEmployeeById(Integer empId, EmployeeEntity employeeEntity) throws Exception;
+    ResponseEntity<EmployeeModel> updateEmployeeById(Integer empId, EmployeeModel employeeModel) throws Exception;
 
     void deleteEmployeeById(Integer empId);
 
