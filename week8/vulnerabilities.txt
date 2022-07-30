@@ -1,0 +1,7 @@
+vulnerability 1 : Variables must be private comply with the principles of OOP.
+vulnerability 2 : Use annotations @Data/ @lombok to write authomaticly get/set methods-
+get/set methods used for not directly address the variables.
+vulnerability 3 : Use DTO Models not Entity class in Service and Controller, user can't have directly
+access the Entity class/DB.
+vulnerability 4: follow the  convention camelCase on declaring variables.
+vulnerability 5: follow the  convention with lower_case on declaring tables in DB.
