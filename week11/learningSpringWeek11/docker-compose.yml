@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  postgres-shop:
+    container_name: postgres-shop
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shop
+  shop:
+    container_name: shop
+    image: shop
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-shop:5432/shop
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSOWRD: password
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres-shop

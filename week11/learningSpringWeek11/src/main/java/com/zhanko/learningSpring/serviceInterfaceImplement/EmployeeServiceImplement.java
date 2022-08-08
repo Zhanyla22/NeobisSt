@@ -3,6 +3,7 @@ package com.zhanko.learningSpring.serviceInterfaceImplement;
 import com.zhanko.learningSpring.entity.EmployeeEntity;
 import com.zhanko.learningSpring.model.EmployeeModel;
 import com.zhanko.learningSpring.repository.EmployeeRepository;
+import com.zhanko.learningSpring.service.EmployeeServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImplement {
+public class EmployeeServiceImplement implements EmployeeServiceInterface {
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -22,11 +23,13 @@ public class EmployeeServiceImplement {
         this.employeeRepository = employeeRepository;
     }
 
+    @Override
     public List<EmployeeEntity> getAllEmployee() { // Model;как это делаааааать
         return  employeeRepository.findAll();
 
     }
 
+    @Override
     public ResponseEntity<EmployeeModel> getEmployeeById(Integer empId) throws Exception{
 try {
     EmployeeEntity employeeEntity = employeeRepository.findById(empId).get();
@@ -44,6 +47,7 @@ catch (Exception e){
 }
     }
 
+    @Override
     public ResponseEntity<EmployeeModel> createNewEmployee(EmployeeModel employeeModel) throws Exception{
         try {
             EmployeeEntity employeeEntity = new EmployeeEntity();
@@ -62,6 +66,7 @@ catch (Exception e){
 
     }
 
+    @Override
     public ResponseEntity<EmployeeModel> updateEmployeeById(Integer empId, EmployeeModel employeeModel) throws Exception{ //переделать возвращаем updated и новые updated список,
         try {
 
@@ -82,7 +87,7 @@ catch (Exception e){
 
 
     }
-
+    @Override
     public void deleteEmployeeById(Integer empId){
         employeeRepository.deleteById(empId);
     }

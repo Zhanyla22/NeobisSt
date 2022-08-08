@@ -14,7 +14,11 @@ import java.util.List;
 @Entity
 @Table(name = "product")
 public class ProductEntity {
-
+//    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL,orphanRemoval = true)
+//    private List<OrdersEntity> orders;
+//
+//    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,orphanRemoval = true)
+//    private List<RecieptEntity> reciepts;
     @Id
     @Column(name = "p_id")
     @GeneratedValue(strategy = GenerationType.AUTO)

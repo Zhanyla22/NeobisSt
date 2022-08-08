@@ -1,5 +1,7 @@
 package com.zhanko.learningSpring.entity;
 
+import com.zhanko.learningSpring.enums.Role;
+import com.zhanko.learningSpring.enums.Status;
 import lombok.Data;
 
 import javax.persistence.*;

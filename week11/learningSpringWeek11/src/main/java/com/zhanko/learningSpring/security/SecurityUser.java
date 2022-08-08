@@ -1,6 +1,6 @@
 package com.zhanko.learningSpring.security;
 
-import com.zhanko.learningSpring.entity.Status;
+import com.zhanko.learningSpring.enums.Status;
 import com.zhanko.learningSpring.entity.Users;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

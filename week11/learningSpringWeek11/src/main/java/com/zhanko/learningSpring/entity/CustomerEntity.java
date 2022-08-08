@@ -15,6 +15,12 @@ import java.util.List;
 @Table(name = "customer")
 public class CustomerEntity {
 
+//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<OrdersEntity> orders;
+//
+//    @OneToMany(mappedBy = "customer",
+//               cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<RecieptEntity> reciepts;
 
     @Id
     @Column(name = "c_id")
