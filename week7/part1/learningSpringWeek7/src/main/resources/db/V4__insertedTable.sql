@@ -1,1 +1,0 @@
---INSERT INTO users_reg (username,first_name,last_name,email,mobile) VALUES('jamamytova','Zhanko','Mamytova','ja.mammytova@gmail.com','0775120402')

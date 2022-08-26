@@ -1,2 +1,0 @@
---ALTER TABLE users_reg
---MODIFY mobile VARCHAR(15);
